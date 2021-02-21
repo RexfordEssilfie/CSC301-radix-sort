@@ -1,7 +1,7 @@
 /* Academic Honesty Certification
 * Written sources used:
 * (Include textbook(s), complete citations for web or other written sources.
-* Introduction to Algorithms by 
+* Introduction to Algorithms by Cormen et. al
 * Note that you are not allowed to use the web for this assignment.
 * Write "none" if no sources used.) *
 *
