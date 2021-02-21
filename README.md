@@ -1,5 +1,5 @@
 # CSC301-radix-sort
-A C Implementation of Radix Sort
+C Implementation of Radix Sort
 
 ## Test
 ```sh
