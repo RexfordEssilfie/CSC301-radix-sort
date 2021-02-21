@@ -1,9 +1,9 @@
-# Makefile for Lab 4:
+# Makefile for Problem Set 3:
 #
 # Written by Jerod Weinman, 14 January 2015
 # Extended by Henry M. Walker, 15 January 2015
 # Preprocessor flags added by Jerod Weinman, 19 January 2015
-# Modified by Rexford Essilfie for radixsort.c assignment, 20 February  2020
+# Modified by Rexford Essilfie for radixsort.c assignment, 20 February 2021
 
 # Type "make foo".
 # We rely on the implicit  rules foo.c -> foo.o for compiling and
