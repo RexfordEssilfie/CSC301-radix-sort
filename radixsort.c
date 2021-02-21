@@ -14,7 +14,6 @@
 * My written or typed signature below confirms that the above list * of sources is complete * Signature: Rexford Essilfie
 */
 
-
 #include <stdio.h>
 #include <assert.h>
 #include <math.h>
@@ -133,14 +132,14 @@ void stablesignsort(int x[], int n)
     /** Count the number of occurrences of positive and negative numbers */
     for (int i = 0; i < n; i++)
     {
-        int indexBasedOnSign = checkPositive(x[i]);
+        int indexBasedOnSign = checkPositive(x[i]); // Index in c based on sign
         c[indexBasedOnSign] += 1;
     }
     //printf("C ARRAY (SIGNS) --> ");
     //pArray(c, NUM_SIGNS);
 
     /** Combine the elements in c, such that each index position contains the number of digits
-     * that are less than or equal to the index.
+     * with a sign less than or equal to the sign's position.
      */
     for (int i = 1; i <= NUM_SIGNS; i++)
     {
@@ -165,8 +164,8 @@ void stablesignsort(int x[], int n)
             break;
         }
 
-        int indexBasedOnSign = checkPositive(num);
-        int finalNumPosition = c[indexBasedOnSign] - 1;
+        int indexBasedOnSign = checkPositive(num);      // Index in c based on sign
+        int finalNumPosition = c[indexBasedOnSign] - 1; // Subtract 1, since we have counts in c, but need 0-based index
         sorted[finalNumPosition] = num;
         c[indexBasedOnSign] -= 1;
     }
@@ -177,8 +176,8 @@ void stablesignsort(int x[], int n)
         for (int i = n - 1; i >= startIndexOfPositiveNumbers; i--)
         {
             int num = x[i];
-            int indexBasedOnSign = checkPositive(num);
-            int finalNumPosition = c[indexBasedOnSign] - 1;
+            int indexBasedOnSign = checkPositive(num);      // Index in c based on sign
+            int finalNumPosition = c[indexBasedOnSign] - 1; // Subtract 1, since we have counts in c, but need 0-based index
             sorted[finalNumPosition] = num;
             c[indexBasedOnSign] -= 1;
         }
@@ -213,10 +212,12 @@ void stableabsolutesort(int x[], int n, int digitPosition)
      *  We compute this dynamically based on the numbers at digitPosition for all elements in x
     */
     int MAX_DIGIT_VALUE = 0;
-    for(int i=0; i<n; i++){
+    for (int i = 0; i < n; i++)
+    {
         int number = digitAtPos(x[i], digitPosition);
-        if (number>MAX_DIGIT_VALUE){
-            MAX_DIGIT_VALUE=number;
+        if (number > MAX_DIGIT_VALUE)
+        {
+            MAX_DIGIT_VALUE = number;
         }
     }
 
@@ -260,8 +261,7 @@ void stableabsolutesort(int x[], int n, int digitPosition)
     {
         int num = x[i];
         int digit = digitAtPos(num, digitPosition);
-        int finalNumPosition = c[digit] - 1;
-
+        int finalNumPosition = c[digit] - 1; // Subtract 1, since we have counts in c, but need 0-based index
         sorted[finalNumPosition] = num;
         c[digit] -= 1;
     }
